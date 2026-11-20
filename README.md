@@ -41,3 +41,12 @@ Pokémon ist eine Marke der jeweiligen Rechteinhaber. Nicht-offizielles, nichtko
 - Die Statistik zeigt pro gegnerischem Pokémon, wie oft es im Preview war und wie oft du es im Kampf gesehen hast, inklusive deiner Siegquote in diesen jeweiligen Matchgruppen.
 - Beim Bearbeiten bleiben alle Angaben erhalten. Alte Freitext-Einträge „Gegnerische Pokémon“ werden in die neuen Felder übernommen, soweit sie durch Kommas, Semikola oder Zeilenumbrüche getrennt sind.
 - CSV- und JSON-Export enthalten diese Angaben. **Wichtig:** Die Website benutzt denselben Browser-Speicherschlüssel wie Version 1.0. Ersetze auf GitHub nur die Website-Dateien, deine auf dieser Domain gespeicherten Daten bleiben erhalten. Vor der Aktualisierung ist ein JSON-Backup trotzdem empfohlen.
+
+## Neu in Version 1.2: Pokémon-Sprites im Matcharchiv
+
+- Im Matcharchiv werden jetzt **zwei 3×2-Sprite-Gruppen** angezeigt, statt Textlisten: dein Team und das gegnerische Team aus dem Preview.
+- Auf deiner Seite sind die **vier mitgenommenen Pokémon** hell, nicht mitgenommene Team-Pokémon sind abgedunkelt. Ein **violetter Punkt** markiert deine beiden Lead-Pokémon.
+- Gegnerische Pokémon, die im Kampf gesehen wurden, erhalten einen **türkisen Punkt**. Pokémon-Namen stehen zusätzlich als Tooltip zur Verfügung.
+- Fehlende Bilder werden zunächst aus einem alternativen Sprite-Verzeichnis geladen; wenn auch dort nichts vorhanden ist, bleiben lesbare Initialen als Ersatz sichtbar. Die Website bleibt ohne Sprite-Verbindung nutzbar.
+- Alte Team- und Matchdaten werden ohne Migration weiterverwendet. Der `localStorage`-Schlüssel ist unverändert.
+- **Update auf GitHub Pages:** `app.js` und `styles.css` ersetzen (oder alle Dateien hochladen), dann die Seite neu laden. Vorher vorsichtshalber unter Backup die Daten exportieren.

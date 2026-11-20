@@ -10,3 +10,27 @@
 .opp-stat-name{display:flex;align-items:center;gap:8px;white-space:nowrap}
 .opp-stat-name img{width:36px;height:36px;object-fit:contain;image-rendering:pixelated}
 @media(max-width:560px){.opponent-roster{grid-template-columns:1fr}}
+
+/* Version 1.2: zwei kompakte Pokémon-Teams in jedem Match-Eintrag */
+.matchrow{display:grid;grid-template-columns:42px minmax(160px,1fr) auto auto 14px;gap:16px;align-items:center;min-width:0}
+.matchrow .content{min-width:0;overflow-wrap:anywhere}
+.matchrow .content strong{font-size:14px;line-height:1.35}
+.matchrow .content span{margin-top:5px}
+.match-arrow{font-size:22px;color:var(--muted);justify-self:end}
+.match-teams{display:flex;gap:20px;align-items:center;min-width:0}
+.match-team{min-width:0}
+.match-team-label{display:flex;gap:10px;justify-content:space-between;align-items:center;color:#d2d9ef;font-size:11px;font-weight:800;letter-spacing:.025em;margin:0 0 4px}
+.match-team-label span{color:var(--muted);font-size:10px;white-space:nowrap;font-weight:500;letter-spacing:0}
+.match-mini-grid{display:grid;grid-template-columns:repeat(3,44px);grid-auto-rows:41px;column-gap:3px;row-gap:2px;width:max-content}
+.match-mini-sprite{display:flex;align-items:center;justify-content:center;position:relative;width:44px;height:41px;isolation:isolate;border-radius:7px;background:#20283f70;border:1px solid #ffffff0d;overflow:visible}
+.match-mini-sprite img{position:relative;z-index:1;display:block;max-width:100%;max-height:100%;width:40px;height:39px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 2px 2px #0007)}
+.match-mini-sprite.dimmed{opacity:.28;filter:grayscale(.55)}
+.match-mini-sprite.picked{background:#2735526b}
+.match-mini-sprite.lead{box-shadow:inset 0 0 0 1px #b7a5ff80}
+.match-mini-sprite.lead:after,.match-mini-sprite.seen:after{content:"";position:absolute;top:2px;right:3px;width:7px;height:7px;border:1px solid #121729;border-radius:50%;background:#bba6ff;z-index:2}
+.match-mini-sprite.seen:after{background:#6bdfd2}
+.match-mini-fallback{position:absolute;z-index:0;display:flex;align-items:center;justify-content:center;inset:0;color:#c3cce8;font-weight:750;font-size:11px;letter-spacing:.02em}
+.match-mini-sprite.empty{background:#14192b66;border:1px dashed #434b6066;color:#566078;font-size:14px}
+@media(max-width:1110px){.matchrow{grid-template-columns:42px minmax(140px,1fr) auto auto 14px;gap:11px}.match-teams{gap:11px}.match-mini-grid{grid-template-columns:repeat(3,39px);grid-auto-rows:38px;gap:2px}.match-mini-sprite{width:39px;height:38px}.match-mini-sprite img{width:37px;height:36px}}
+@media(max-width:860px){.matchrow{grid-template-columns:35px minmax(0,1fr) auto;gap:10px}.matchrow .match-teams{grid-column:2/-1;grid-row:2;justify-content:flex-start;gap:22px}.match-arrow{display:none}.matchrow .pill{grid-column:3;grid-row:1}.match-mini-grid{grid-template-columns:repeat(3,44px);grid-auto-rows:41px}.match-mini-sprite{width:44px;height:41px}.match-mini-sprite img{width:40px;height:39px}}
+@media(max-width:430px){.matchrow{padding:12px 10px;gap:8px;grid-template-columns:30px minmax(0,1fr) auto}.matchrow .number{font-size:17px;min-width:0}.match-teams{gap:11px!important}.match-mini-grid{grid-template-columns:repeat(3,35px);grid-auto-rows:35px;gap:1px}.match-mini-sprite{width:35px;height:35px}.match-mini-sprite img{width:33px;height:33px}.match-team-label{font-size:10px;gap:4px}.match-team-label span{font-size:9px}.matchrow .content strong{font-size:13px}}
