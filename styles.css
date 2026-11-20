@@ -34,3 +34,42 @@
 @media(max-width:1110px){.matchrow{grid-template-columns:42px minmax(140px,1fr) auto auto 14px;gap:11px}.match-teams{gap:11px}.match-mini-grid{grid-template-columns:repeat(3,39px);grid-auto-rows:38px;gap:2px}.match-mini-sprite{width:39px;height:38px}.match-mini-sprite img{width:37px;height:36px}}
 @media(max-width:860px){.matchrow{grid-template-columns:35px minmax(0,1fr) auto;gap:10px}.matchrow .match-teams{grid-column:2/-1;grid-row:2;justify-content:flex-start;gap:22px}.match-arrow{display:none}.matchrow .pill{grid-column:3;grid-row:1}.match-mini-grid{grid-template-columns:repeat(3,44px);grid-auto-rows:41px}.match-mini-sprite{width:44px;height:41px}.match-mini-sprite img{width:40px;height:39px}}
 @media(max-width:430px){.matchrow{padding:12px 10px;gap:8px;grid-template-columns:30px minmax(0,1fr) auto}.matchrow .number{font-size:17px;min-width:0}.match-teams{gap:11px!important}.match-mini-grid{grid-template-columns:repeat(3,35px);grid-auto-rows:35px;gap:1px}.match-mini-sprite{width:35px;height:35px}.match-mini-sprite img{width:33px;height:33px}.match-team-label{font-size:10px;gap:4px}.match-team-label span{font-size:9px}.matchrow .content strong{font-size:13px}}
+
+/* v1.3 – Alle sechs Pokémon bleiben vollständig innerhalb der Team-Kachel. */
+.cards .card{min-width:0}
+.cards .card .sprites{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  align-items:center;
+  gap:3px;
+  width:100%;
+  min-width:0;
+  min-height:52px;
+  margin:12px 0 14px;
+}
+.cards .card .sprites img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1 / 1;
+  margin:0;
+  min-width:0;
+  max-width:100%;
+  object-fit:contain;
+  image-rendering:pixelated;
+}
+.cards .card .sprites .blank{width:100%;height:auto;aspect-ratio:1/1;margin:0}
+
+/* v1.3 – Exakt dieselbe Hervorhebung für eigene und gegnerische Einsätze. */
+.match-mini-sprite.picked,
+.match-mini-sprite.seen{
+  opacity:1;
+  filter:none;
+  background:#353456;
+  border:1px solid #af9fff;
+  box-shadow:inset 0 0 0 1px #a896ff35;
+}
+.match-mini-sprite.lead{
+  box-shadow:inset 0 0 0 1px #cabfff80;
+}
+/* Der farbige Punkt unterscheidet weiterhin Leads von gesichteten Gegnern. */

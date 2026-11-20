@@ -1,4 +1,4 @@
-# Champions Journal
+# Champions Journal v1.3
 
 Kleine, statische Fan-Webseite für **Pokémon Champions**: Teams bauen, Matches dokumentieren, statistisch auswerten und als JSON oder CSV exportieren.
 
@@ -50,3 +50,11 @@ Pokémon ist eine Marke der jeweiligen Rechteinhaber. Nicht-offizielles, nichtko
 - Fehlende Bilder werden zunächst aus einem alternativen Sprite-Verzeichnis geladen; wenn auch dort nichts vorhanden ist, bleiben lesbare Initialen als Ersatz sichtbar. Die Website bleibt ohne Sprite-Verbindung nutzbar.
 - Alte Team- und Matchdaten werden ohne Migration weiterverwendet. Der `localStorage`-Schlüssel ist unverändert.
 - **Update auf GitHub Pages:** `app.js` und `styles.css` ersetzen (oder alle Dateien hochladen), dann die Seite neu laden. Vorher vorsichtshalber unter Backup die Daten exportieren.
+
+## Update v1.3 (Darstellung)
+
+- In der Teamübersicht passen alle **sechs Pokémon-Sprites** vollständig in ihre Team-Kachel – auch bei schmalen Karten.
+- Im Matcharchiv werden **eigene eingesetzte Pokémon** und **gegenspielerische gesehene Pokémon** mit derselben deutlichen Umrandung und Hintergrundfarbe hervorgehoben.
+- Wenn beim Gegner mindestens ein Pokémon als gesehen markiert ist, werden unbestätigte Preview-Pokémon wie nicht mitgenommene eigene Pokémon abgedunkelt. Ohne Sichtungsangaben bleiben alle Gegner-Sprites normal sichtbar (keine falschen Annahmen über Auswahl).
+- Lead- und Gesehen-Markierungen bleiben als kleine farbige Punkte erhalten.
+- **Keine Änderung am Datenformat**: vorhandene Teams/Matches bleiben nach einem Austausch von `app.js` und `styles.css` erhalten. Vor Updates trotzdem ein JSON-Backup herunterladen.
