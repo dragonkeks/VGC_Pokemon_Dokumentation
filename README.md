@@ -17,8 +17,8 @@ Zum lokalen Ausprobieren `index.html` per Doppelklick öffnen.
 - Startseite: Team erstellen oder auswählen.
 - Team Builder: Pokémon-Suche, Spitzname, Fähigkeit, Item, Wesen, 4 Attacken und **Champions-SP: maximal 66 gesamt / 32 je Wert**.
 - Match-Archiv: Siege grün / Niederlagen rot; jeden Eintrag anklicken und bearbeiten.
-- Match-Formular: Ergebnis, Datum, Archetyp, Gegner, vier gewählte Pokémon, Lead, Wendepunkt, Fehlerursache, Learning, Notes, optionale Screenshot-Datei und **manuell erfasste Häufigkeit eingesetzter Attacken**.
-- Statistik: Ergebnisse, Pokémon-Auswahlhäufigkeit und Siegquote, Archetyp-Statistik und tatsächliche (manuell erfasste) Move-Nutzung.
+- Match-Formular: Ergebnis, Datum, Archetyp, Gegner, bis zu sechs gegnerische Pokémon (mit Suchvorschlägen), optional im Kampf gesehene gegnerische Pokémon, vier eigene gewählte Pokémon, Lead, Wendepunkt, Fehlerursache, Learning, Notes, optionale Screenshot-Datei und **manuell erfasste Häufigkeit eingesetzter Attacken**.
+- Statistik: Ergebnisse, Pokémon-Auswahlhäufigkeit und Siegquote, gegnerische Pokémon nach Preview/Sichtung und jeweilige Gewinnrate, Archetyp-Statistik und tatsächliche (manuell erfasste) Move-Nutzung.
 - Backup: JSON-Export des gesamten Journals oder nur eines Teams; CSV-Export der Matchliste; JSON-Import. Eine Team-JSON-Datei kannst du in ChatGPT hochladen und auswerten lassen.
 
 ## Wichtig: Speicherung
@@ -33,3 +33,11 @@ Zum lokalen Ausprobieren `index.html` per Doppelklick öffnen.
 - Fähigkeiten, Attacken und Items: **Freitext**, keine Verifikation der legalen Champions-Learnsets; das wäre eine separate Datenpflege-Aufgabe.
 
 Pokémon ist eine Marke der jeweiligen Rechteinhaber. Nicht-offizielles, nichtkommerzielles Fanprojekt.
+
+## Neu in Version 1.1: Gegnerische Pokémon
+
+- Im Match-Formular stehen sechs suchbare Felder für die gegnerische Teamvorschau zur Verfügung. Die Felder unterstützen deutsche/englische Roster-Namen, erlauben aber auch freie Namen.
+- Die Checkbox **„Im Kampf gesehen“** ist optional. Bitte nur tatsächlich im Kampf gezeigte Pokémon markieren; nicht automatisch alle sechs aus der Teamvorschau.
+- Die Statistik zeigt pro gegnerischem Pokémon, wie oft es im Preview war und wie oft du es im Kampf gesehen hast, inklusive deiner Siegquote in diesen jeweiligen Matchgruppen.
+- Beim Bearbeiten bleiben alle Angaben erhalten. Alte Freitext-Einträge „Gegnerische Pokémon“ werden in die neuen Felder übernommen, soweit sie durch Kommas, Semikola oder Zeilenumbrüche getrennt sind.
+- CSV- und JSON-Export enthalten diese Angaben. **Wichtig:** Die Website benutzt denselben Browser-Speicherschlüssel wie Version 1.0. Ersetze auf GitHub nur die Website-Dateien, deine auf dieser Domain gespeicherten Daten bleiben erhalten. Vor der Aktualisierung ist ein JSON-Backup trotzdem empfohlen.
